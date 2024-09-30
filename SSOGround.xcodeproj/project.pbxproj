@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0DE5EC392CA3A9660081685E /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE5EC382CA3A9660081685E /* AuthenticationServices.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0DE5EC0A2CA3A2BB0081685E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,25 @@
 		0DE5EBF72CA3A2BA0081685E /* SSOGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSOGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE5EC092CA3A2BB0081685E /* SSOGroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSOGroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE5EC132CA3A2BB0081685E /* SSOGroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSOGroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE5EC382CA3A9660081685E /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0DE5EC3E2CA505A40081685E /* Exceptions for "SSOGround" folder in "SSOGround" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0DE5EBF62CA3A2BA0081685E /* SSOGround */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0DE5EBF92CA3A2BA0081685E /* SSOGround */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0DE5EC3E2CA505A40081685E /* Exceptions for "SSOGround" folder in "SSOGround" target */,
+			);
 			path = SSOGround;
 			sourceTree = "<group>";
 		};
@@ -52,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE5EC392CA3A9660081685E /* AuthenticationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,7 @@
 				0DE5EBF92CA3A2BA0081685E /* SSOGround */,
 				0DE5EC0C2CA3A2BB0081685E /* SSOGroundTests */,
 				0DE5EC162CA3A2BB0081685E /* SSOGroundUITests */,
+				0DE5EC372CA3A9660081685E /* Frameworks */,
 				0DE5EBF82CA3A2BA0081685E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +110,14 @@
 				0DE5EC132CA3A2BB0081685E /* SSOGroundUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0DE5EC372CA3A9660081685E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DE5EC382CA3A9660081685E /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +223,8 @@
 			);
 			mainGroup = 0DE5EBEE2CA3A2BA0081685E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0DE5EBF82CA3A2BA0081685E /* Products */;
 			projectDirPath = "";
@@ -401,6 +431,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FUSZMYVQ5X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SSOGround/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -434,6 +465,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FUSZMYVQ5X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SSOGround/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
