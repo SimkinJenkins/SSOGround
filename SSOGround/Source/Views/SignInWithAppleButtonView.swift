@@ -9,6 +9,12 @@ import SwiftUI
 import AuthenticationServices
 
 struct SignInWithAppleButtonView: UIViewRepresentable {
+    var didCompleteWithAuthorization: ((ASAuthorizationAppleIDCredential) -> ())?
+
+    init(didCompleteWithAuthorization: ((ASAuthorizationAppleIDCredential) -> Void)? = nil) {
+        self.didCompleteWithAuthorization = didCompleteWithAuthorization
+    }
+
     func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
         let button = ASAuthorizationAppleIDButton()
         button.addTarget(context.coordinator, action: #selector(Coordinator.didTapButton), for: .touchUpInside)
@@ -42,18 +48,14 @@ struct SignInWithAppleButtonView: UIViewRepresentable {
 
 extension SignInWithAppleButtonView.Coordinator: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
-            // Handle the userIdentifier and optionally the full name and email
-            print(userIdentifier, fullName, email)
-            print("User ID", appleIDCredential.user)
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
+            return
         }
+        parent.didCompleteWithAuthorization?(appleIDCredential)
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("Authorization failed: \(error.localizedDescription)")
+        Log.error("Authorization failed: \(error.localizedDescription) \n\n -> called from \(#function) \(#file):\(#line)")
     }
 
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
