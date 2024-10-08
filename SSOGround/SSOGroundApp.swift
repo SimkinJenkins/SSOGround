@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct SSOGroundApp: App {
-
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             User.self
@@ -23,9 +22,15 @@ struct SSOGroundApp: App {
         }
     }()
 
+    @ObservedObject var navigation = Navigation(title: "SSO Ground")
+
     var body: some Scene {
         WindowGroup {
-            SSOHomeView()
+            NavigationStack(path: $navigation.path) {
+                SSOHomeView()
+                    .navigation(navigation)
+            }
+            .environmentObject(navigation)
         }
         .modelContainer(sharedModelContainer)
     }

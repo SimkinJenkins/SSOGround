@@ -26,6 +26,8 @@ struct NavigationViewModifier: ViewModifier {
         switch view {
         case .settings:
             SettingsView()
+        case .editProfile(let user):
+            EditProfileView(user: user)
         }
     }
 }

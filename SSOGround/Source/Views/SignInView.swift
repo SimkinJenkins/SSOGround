@@ -9,8 +9,10 @@ import SwiftUI
 import AuthenticationServices
 
 struct SSOSignInView: View {
-    let users: [User]
     @Environment(\.modelContext) private var modelContext
+    @EnvironmentObject private var navigation: Navigation
+
+    let users: [User]
 
     var body: some View {
         VStack {
@@ -20,12 +22,22 @@ struct SSOSignInView: View {
                     .font(.title)
             }
             .padding()
-            SignInWithAppleButtonView() { authorization in
-                UserUtils.save(appleUser: authorization, to: modelContext, currentUsers: users)
+            SignInWithAppleButtonView() { credentials in
+                onAppleDidCompleteWithAuthorization(credentials)
+                
             }
                 .frame(width: 280, height: 45)
                 .padding()
         }
+    }
+
+    private func onAppleDidCompleteWithAuthorization(_ credentials: ASAuthorizationAppleIDCredential) {
+        UserUtils.save(appleUser: credentials, to: modelContext, currentUsers: users)
+        guard let user = users.currentUser,
+              user.name.isEmpty || user.email.isEmpty else {
+            return
+        }
+        navigation.present(.editProfile(user))
     }
 }
 

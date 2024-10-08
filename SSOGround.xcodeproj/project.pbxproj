@@ -26,6 +26,7 @@
 		0DF47FCC2CB39D8600C7643F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF47FCB2CB39D8600C7643F /* Navigation.swift */; };
 		0DF47FCE2CB39DF000C7643F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF47FCD2CB39DF000C7643F /* SettingsView.swift */; };
 		0DF47FD22CB39FA000C7643F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF47FD12CB39FA000C7643F /* AppView.swift */; };
+		0DF47FD42CB3A64B00C7643F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF47FD32CB3A64B00C7643F /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		0DF47FCB2CB39D8600C7643F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		0DF47FCD2CB39DF000C7643F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0DF47FD12CB39FA000C7643F /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		0DF47FD32CB3A64B00C7643F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF47FCD2CB39DF000C7643F /* SettingsView.swift */,
+				0DF47FD32CB3A64B00C7643F /* EditProfileView.swift */,
 				0DF47FA02CAA57D700C7643F /* HomeView.swift */,
 				0DF47FBB2CAA583200C7643F /* UserProfileView.swift */,
 				0DF47FA22CAA57D700C7643F /* SignInView.swift */,
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DF47FCE2CB39DF000C7643F /* SettingsView.swift in Sources */,
+				0DF47FD42CB3A64B00C7643F /* EditProfileView.swift in Sources */,
 				0DF47FAE2CAA57D700C7643F /* HomeView.swift in Sources */,
 				0DF47FAF2CAA57D700C7643F /* Listable.swift in Sources */,
 				0DF47FC82CB37BE800C7643F /* Log.swift in Sources */,

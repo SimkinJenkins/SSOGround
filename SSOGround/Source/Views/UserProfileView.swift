@@ -22,6 +22,9 @@ struct UserProfileView: View {
             Button("Logout") {
                 viewModel.user.logout()
             }
+            Button("Delete User") {
+                viewModel.removeUser(modelContext: modelContext)
+            }
         }
     }
 }

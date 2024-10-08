@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum AppView: Listable {
+enum AppView: Enumarable {
     case settings
+    case editProfile(User)
 }

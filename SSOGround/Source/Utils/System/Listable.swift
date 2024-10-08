@@ -8,12 +8,17 @@
 import Foundation
 
 /// Protocol util to make any enum listable
-protocol Listable: CaseIterable, Hashable, Identifiable {
+protocol Listable: CaseIterable, Enumarable {
     var id: Self { get }
     var name: String { get }
 }
 
-extension Listable {
+protocol Enumarable: Hashable, Identifiable {
+    var id: Self { get }
+    var name: String { get }
+}
+
+extension Enumarable {
     var id: Self {
         return self
     }
